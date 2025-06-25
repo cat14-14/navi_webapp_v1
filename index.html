@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAVI 대시보드</title>
+  <link rel="stylesheet" href="style-1.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- 왼쪽 사이드바 -->
+    <div class="sidebar">
+      <div class="logo">NAVI</div>
+      <ul class="menu">
+        <li onclick="window.location.href='index.html'">홈</li>
+        <li>감정일기</li>
+        <li onclick="window.location.href='schedule.html'">일정관리</li>
+        <li onclick="window.location.href='memo.html'">메모</li>
+        <li>AI 상담</li>
+      </ul>
+      
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="main-content">
+      <div class="top-bar">
+        <div class="welcome-message">안녕하세요, 사용자님!</div>
+        <div class="user-profile">프로필</div>
+      </div>
+
+      <div class="content-wrapper">
+        <!-- 중앙 사용자 정의 영역 -->
+        <div class="custom-content" id="custom-area">
+          <!-- 날짜 클릭 시 내용 출력 -->
+        </div>
+
+        <!-- 오른쪽 캘린더 및 일정 -->
+        <div class="calendar-container">
+          <div class="calendar-header">
+            <button id="prev-month">&#8592;</button>
+            <span id="calendar-title"></span>
+            <button id="next-month">&#8594;</button>
+          </div>
+          <div id="calendar"></div>
+          <div class="calendar-buttons">
+            <button id="filter-today">오늘</button>
+            <button id="filter-deadline">마감</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script-1.js"></script>
+</body>
+
+</html>

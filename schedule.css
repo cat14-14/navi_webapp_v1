@@ -1,0 +1,274 @@
+/* schedule.css */
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f6fa;
+    color: #2c3e50;
+}
+
+.schedule-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar-panel {
+    width: 160px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.back-button {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.calendar-panel {
+    flex: 2;
+    padding: 2rem 1.5rem;
+    background-color: white;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-buttons {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.calendar-buttons button {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #0984e3;
+    color: white;
+}
+
+.calendar-nav-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#calendar-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 60px);
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.calendar-day {
+    text-align: center;
+    font-weight: bold;
+    color: #7f8c8d;
+}
+
+.calendar-blank {
+    height: 60px;
+    width: 60px;
+}
+
+.calendar-date {
+    background-color: #ecf0f1;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-date.today {
+    background-color: #4c8dff;
+    color: white;
+}
+
+.calendar-date.selected {
+    background-color: #6c5ce7;
+    color: white;
+}
+
+#schedule-list {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f1f2f6;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 480px;
+}
+
+#schedule-list ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+#schedule-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-schedule {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.add-schedule input[type="text"],
+.add-schedule input[type="date"] {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.add-schedule button {
+    padding: 0.5rem 1rem;
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-panel {
+    flex: 1;
+    background-color: #ffffff;
+    border-left: 1px solid #ccc;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#chat-log {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f1f2f6;
+    border-radius: 10px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.chat-input button {
+    padding: 0.5rem 1rem;
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.delete-confirm-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.confirm-content {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 280px;
+}
+
+.confirm-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.confirm-delete {
+    padding: 0.5rem 1.2rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.confirm-cancel {
+    padding: 0.5rem 1.2rem;
+    background-color: #bdc3c7;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}

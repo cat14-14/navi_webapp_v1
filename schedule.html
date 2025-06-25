@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVI 일정관리</title>
+    <link rel="stylesheet" href="schedule.css" />
+</head>
+
+<body>
+    <div class="schedule-container">
+        <div class="sidebar-panel">
+            <button class="back-button" onclick="window.location.href='index.html'">← 돌아가기</button>
+        </div>
+
+        <div class="calendar-panel">
+            <div class="calendar-buttons">
+                <button id="go-today">오늘</button>
+                <button id="filter-deadline">마감</button>
+            </div>
+
+            <div class="calendar-nav-wrapper">
+                <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <div class="calendar-title" id="calendar-title"></div>
+                    <button id="next-month">→</button>
+                </div>
+            </div>
+
+            <div id="calendar"></div>
+            <div id="schedule-list"></div>
+
+            <div class="add-schedule">
+                <h3>일정 추가</h3>
+                <input type="text" id="task-title" placeholder="일정 제목">
+                <input type="date" id="task-deadline">
+                <label><input type="checkbox" id="task-important"> 중요 일정 <br><br></label>
+                <button onclick="addSchedule()">추가</button>
+            </div>
+        </div>
+
+        <div class="chat-panel">
+            <div id="chat-log"></div>
+            <div class="chat-input">
+                <input type="text" id="chat-text" placeholder="예: 내일 3시에 회의 일정 추가해줘">
+                <button onclick="sendToAI()">입력</button>
+            </div>
+        </div>
+    </div>
+    <script src="schedule.js"></script>
+</body>
+
+</html>
